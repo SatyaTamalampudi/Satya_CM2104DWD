@@ -16,7 +16,7 @@ res.end(randomJoke);
 app.get('/add',function(req,res){
   var x = req.query.x;
   var y = req.query.y;
-  res.send("X + Y="+parseInt(X+Y))
+  res.send("X + Y="+parseInt(x+y))
 
 });
 
