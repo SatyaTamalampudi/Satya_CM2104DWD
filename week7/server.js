@@ -19,5 +19,26 @@ app.get('/add',function(req,res){
 res.send("X + Y="+ (x+y));
 
 });
+app.get('/calc',function(req,res){
+  var x = req.query.x;
+  var y = req.query.y;
+
+  if (req.query.add) {
+    res.send("X + Y="+ (x+y));
+  }
+  if (req.query.sub) {
+    res.send("X - Y="+ (x-y));
+  }
+  if (req.query.mul) {
+    res.send("X * Y="+ (x*y));
+  }
+  if (req.query.div) {
+    res.send("X / Y="+ (x/y));
+  }
+  
+
+});
+
+
 
 app.listen(8080);
