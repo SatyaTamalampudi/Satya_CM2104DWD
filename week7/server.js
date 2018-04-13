@@ -19,6 +19,7 @@ app.get('/add',function(req,res){
 res.send("X + Y="+ (x+y));
 
 });
+
 app.get('/calc',function(req,res){
   var x = req.query.x;
   var y = req.query.y;
@@ -35,7 +36,7 @@ app.get('/calc',function(req,res){
   if (req.query.div) {
     res.send("X / Y="+ (x/y));
   }
-  
+
 
 });
 
