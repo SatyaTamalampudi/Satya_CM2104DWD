@@ -15,14 +15,17 @@ res.end(randomJoke);
 });
 app.get('/add',function(req,res){
   var x = pareInt(req.query.x);
-  var y = parseInt(req.query.y);
+  var y = pareInt(req.query.y);
 res.send("X + Y="+ (x+y));
 
 });
 
+app.get('/a',function(req,res){
+  res.send("Hello World! by expresss");
+});
 app.get('/calc',function(req,res){
-  var x = req.query.x;
-  var y = req.query.y;
+  var x =pareInt(req.query.x);
+  var y = pareInt(req.query.y);
   var op = req.query.op;
   switch( op ){
 
