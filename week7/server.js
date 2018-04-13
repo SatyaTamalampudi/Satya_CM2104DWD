@@ -14,8 +14,8 @@ var randomJoke = knockknock()
 res.end(randomJoke);
 });
 app.get('/add',function(req,res){
-  var x = req.query.x;
-  var y = req.query.y;
+  var x = pareInt(req.query.x);
+  var y = parseInt(req.query.y);
 res.send("X + Y="+ (x+y));
 
 });
@@ -23,21 +23,18 @@ res.send("X + Y="+ (x+y));
 app.get('/calc',function(req,res){
   var x = req.query.x;
   var y = req.query.y;
+  var op = req.query.op;
+  switch( op ){
 
-  if (req.query.add) {
-    res.send("X + Y="+ (x+y));
-  }
-  if (req.query.sub) {
-    res.send("X - Y="+ (x-y));
-  }
-  if (req.query.mul) {
-    res.send("X * Y="+ (x*y));
-  }
-  if (req.query.div) {
-    res.send("X / Y="+ (x/y));
-  }
+    case "add": res.send("X + Y="+(x+y)); break;
 
+    case "sub": res.send("X - Y="+(x-y)); break;
 
+    case "mul": res.send("X x Y="+(x*y)); break;
+
+    case "div": res.send("X / Y="+(x/y)); break;
+
+}
 });
 
 
