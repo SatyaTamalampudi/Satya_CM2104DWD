@@ -20,9 +20,7 @@ res.send("X + Y="+ (x+y));
 
 });
 
-app.get('/a',function(req,res){
-  res.send("Hello World! by expresss");
-});
+
 app.get('/calc',function(req,res){
   var x =parseInt(req.query.x);
   var y = parseInt(req.query.y);
@@ -39,7 +37,12 @@ app.get('/calc',function(req,res){
 
 }
 });
+app.get('/getform', function(req, res){
+   var name = req.query.name;
+   var quest = req.query.quest;
+  res.send("Hi "+name+" I am sure you will "+quest) ;
+ });
 
-
+app.use(express.static('public'))
 
 app.listen(8080);
