@@ -10,6 +10,38 @@ var client = new twitter({
 
 app.use(express.static('public'));
 
+app.get('/tweetsjson', function(req, res) {
+
+    var term = req.query.term;
+
+    var params = {screen_name: term};
+
+    client.get('statuses/user_timeline', params, function(error, tweets,response) {
+
+        if (!error) {
+
+            var json = [];
+
+            for (var i = 0; i < tweets.statuses.length; i++) {
+
+                json.push({
+
+                    name: tweets.statuses[i].user.name,
+
+                    text: tweets.statuses[i].text
+
+                });
+
+            }
+
+            res.send(JSON.stringify(json));
+
+        }
+
+    });
+
+});
+
 app.get('/', function(req, res){
    var term = req.query.term;
    var parms = (screen_name,'nodejs');
