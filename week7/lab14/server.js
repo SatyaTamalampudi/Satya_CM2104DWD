@@ -12,7 +12,7 @@ app.use(express.static('public'))
 
 app.get('/', function(req, res){
    var term = req.query.term;
-   var parms = (screen_name,'nodejs'),
+   var parms = (screen_name,'nodejs');
    client.get('statuses/user_timeline', params, function(error, tweets, response) {
 
         if (!error) {
