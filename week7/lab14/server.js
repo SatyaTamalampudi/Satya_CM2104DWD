@@ -8,7 +8,7 @@ var client = new twitter({
   access_token_secret: 'TOXzdBuA9gb0hCBW5B4AukUVbQZfi3vAtJz3adj4LhkQQ'
 });
 
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 app.get('/', function(req, res){
    var term = req.query.term;
