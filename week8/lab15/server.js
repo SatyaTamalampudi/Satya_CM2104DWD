@@ -52,3 +52,10 @@ app.get('/all', function(req, res) {
     res.send(output);
     });
    });
+
+app.post('/delete', function(req, res) {
+    db.collection('quotes').deleteOne(req.body, function(err, result) {
+          if (err) throw err;
+      res.redirect('/');
+     });
+    });
