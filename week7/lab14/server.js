@@ -22,7 +22,7 @@ app.get('/tweetsjson', function(req, res) {
 
             var json = [];
 
-            for (var i = 0; i < tweets.statuses.length; i++) {
+            for (var i = 0; i < tweets.length; i++) {
 
                 json.push({
 
